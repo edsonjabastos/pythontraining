@@ -13,13 +13,13 @@ nr_numbers = int(input(f"How many numbers would you like?\n"))
 #e.g. 4 letter, 2 symbol, 2 number = JduE&!91
 generated_password = ""
 
-for char in range(0, nr_letters):
+for char in range(nr_letters):
     generated_password += random.choice(letters)
 
-for symbol in range(0, nr_symbols):
+for symbol in range(nr_symbols):
     generated_password += random.choice(symbols)
 
-for number in range(0, nr_numbers):
+for number in range(nr_numbers):
     generated_password += random.choice(numbers)
 
 #Hard Level - Order of characters randomised:
