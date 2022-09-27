@@ -89,18 +89,18 @@ while not end_of_game:
     # Check guessed letter
     for position in range(word_length):
         letter = chosen_word[position]
-        print(f"Current position: {position}\n Current letter: {letter}\n Guessed letter: {guess}")
+        # print(f"Current position: {position}\n Current letter: {letter}\n Guessed letter: {guess}")
         if letter == guess:
             display[position] = letter
         # TODO-2: - If guess is not a letter in the chosen_word,
         # Then reduce 'lives' by 1.
         # If lives goes down to 0 then the game should stop and it should print "You lose."
     if not guess in chosen_word[position]:
-        lives -= 1
-    if lives == 0:
-        end_of_game = True
-        print("You lose.")
-    print(lives)
+            lives -= 1
+            if lives == 0:
+                end_of_game = True
+                print("You lose.")
+    # print(lives)
     # Join all the elements in the list and turn it into a String.
     print(f"{' '.join(display)}")
 
