@@ -30,9 +30,14 @@ alphabet = [
 
 def caesar(drt, txt, shift):
 
+    print(drt)
+    print(shift)
     if drt == "decode":
-        alphabet.reverse()
+        # alphabet.reverse()
         shift *= -1
+    print(shift)
+    print(txt)
+    print(alphabet)
 
     def encrypt_or_decrypt(tx, sft):
         new_text = ""
@@ -40,7 +45,12 @@ def caesar(drt, txt, shift):
             letter_index = alphabet.index(letter)
             letter_new_index = letter_index + sft
             new_text += alphabet[letter_new_index % len(alphabet)]
-        print(new_text)
+            print(new_text)
+            print(letter)
+            print(sft)
+            print(letter_index)
+            print(alphabet[letter_new_index % len(alphabet)])
+        print(f"The encode test is {new_text}.")
 
     encrypt_or_decrypt(tx=txt, sft=shift)
 
