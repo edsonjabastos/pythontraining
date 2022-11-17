@@ -46,8 +46,6 @@ def deal_card():
 # Hint 6: Create a function called calculate_score() that takes a List of cards as input
 # and returns the score.
 # Look up the sum() function to help you do this.
-
-
 def calculate_score(cards):
     """Takes a list of card and return the score calculated from the cards"""
     # Hint 7: Inside calculate_score() check for a blackjack (a hand with only 2 cards: ace + 10) and return 0 instead of the actual score. 0 will represent a blackjack in our game.
@@ -71,18 +69,24 @@ for _ in range(2):
     user_cards.append(deal_card())
     computer_cards.append(deal_card())
 
-
+# Hint 9: Call calculate_score(). If the computer or the user has a blackjack (0) or if the user's score is over 21, then the game ends.
 user_score = calculate_score(user_cards)
 computer_score = calculate_score(computer_cards)
-
-# Hint 9: Call calculate_score(). If the computer or the user has a blackjack (0) or if the user's score is over 21, then the game ends.
+print(f"   Your cards: {user_cards}, current score: {user_score}")
+print(f"   Computer first card: {computer_cards[0]}")
 
 if user_score == 0 or computer_score == 0 or user_score > 21:
     is_game_over = True
 
 # Hint 10: If the game has not ended, ask the user if they want to draw another card. If yes, then use the deal_card() function to add another card to the user_cards List. If no, then the game has ended.
+want_a_card = input("Want more 1 card? Type 'y' if you want and 'n' if don't.")
+if want_a_card == "y":
+    user_cards.append(deal_card())
+if want_a_card == "n":
+    is_game_over = True
 
 # Hint 11: The score will need to be rechecked with every new card drawn and the checks in Hint 9 need to be repeated until the game ends.
+
 
 # Hint 12: Once the user is done, it's time to let the computer play. The computer should keep drawing cards as long as it has a score less than 17.
 
