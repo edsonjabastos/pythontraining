@@ -34,48 +34,51 @@
 # Hint 4: Create a deal_card() function that uses the List below to *return* a random card.
 # 11 is the Ace.
 import random
-from re import T
-
-cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
 
 
 def deal_card():
-    random_choice = random.randint(0, len(cards) - 1)
-    return cards[random_choice]
+    """Returns a random card from the deck."""
+    cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
+    card = random.choice(cards)
+    return card
+
+
+# Hint 6: Create a function called calculate_score() that takes a List of cards as input
+# and returns the score.
+# Look up the sum() function to help you do this.
+
+
+def calculate_score(cards):
+    """Takes a list of card and return the score calculated from the cards"""
+    # Hint 7: Inside calculate_score() check for a blackjack (a hand with only 2 cards: ace + 10) and return 0 instead of the actual score. 0 will represent a blackjack in our game.
+    if sum(cards) == 21 and len(cards) == 2:
+        return 0
+
+    # Hint 8: Inside calculate_score() check for an 11 (ace). If the score is already over 21, remove the 11 and replace it with a 1. You might need to look up append() and remove().
+    if 11 in cards and sum(cards) > 21:
+        cards.remove(11)
+        cards.append(1)
+
+    return sum(cards)
 
 
 # Hint 5: Deal the user and computer 2 cards each using deal_card() and append().
 user_cards = []
 computer_cards = []
-user_cards.append(deal_card())
-user_cards.append(deal_card())
-computer_cards.append(deal_card())
-computer_cards.append(deal_card())
-print(user_cards, "%%%%%%")
-print(computer_cards, "@@@@@")
+is_game_over = False
 
-# Hint 6: Create a function called calculate_score() that takes a List of cards as input
-# and returns the score.
-# Look up the sum() function to help you do this.
-def calculate_score(player_cards):
-    def sum_cards(player_cards):
-        total = 0
-        for card in player_cards:
-            total += card
-        print(total, "TOTAL")
-        return total
+for _ in range(2):
+    user_cards.append(deal_card())
+    computer_cards.append(deal_card())
 
 
-user_sum = sum_cards(user_cards)
-computer_sum = sum_cards(computer_cards)
-# print(user_sum, "%%%%%%")
-# print(computer_sum, "@@@@@")
-
-# Hint 7: Inside calculate_score() check for a blackjack (a hand with only 2 cards: ace + 10) and return 0 instead of the actual score. 0 will represent a blackjack in our game.
-
-# Hint 8: Inside calculate_score() check for an 11 (ace). If the score is already over 21, remove the 11 and replace it with a 1. You might need to look up append() and remove().
+user_score = calculate_score(user_cards)
+computer_score = calculate_score(computer_cards)
 
 # Hint 9: Call calculate_score(). If the computer or the user has a blackjack (0) or if the user's score is over 21, then the game ends.
+
+if user_score == 0 or computer_score == 0 or user_score > 21:
+    is_game_over = True
 
 # Hint 10: If the game has not ended, ask the user if they want to draw another card. If yes, then use the deal_card() function to add another card to the user_cards List. If no, then the game has ended.
 
