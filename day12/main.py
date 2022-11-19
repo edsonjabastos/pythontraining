@@ -11,6 +11,7 @@ if difficulty == "easy":
 elif difficulty == "hard":
     attempts = 5
 random_number = randint(1, 100)
+print(random_number)
 while attempts > 0:
     print(f"You have {attempts} attempts remaining to guess the number.")
     guess = int(input("Make a guess: "))
