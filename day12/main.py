@@ -1,4 +1,4 @@
-import random
+from random import randint
 from art import logo
 
 print(logo)
@@ -10,7 +10,7 @@ if difficulty == "easy":
     attempts = 10
 elif difficulty == "hard":
     attempts = 5
-random_number = random.randint(0, 100)
+random_number = randint(1, 100)
 while attempts > 0:
     print(f"You have {attempts} attempts remaining to guess the number.")
     guess = int(input("Make a guess: "))
