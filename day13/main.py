@@ -1,14 +1,14 @@
 ############DEBUGGING#####################
 
-# Describe Problem
-def my_function():
-    for i in range(1,21):
-        print("i", i)
-        if i == 20:
-            print("You got it")
+# # Describe Problem
+# def my_function():
+#     for i in range(1,21):
+#         print("i", i)
+#         if i == 20:
+#             print("You got it")
 
 
-my_function()
+# my_function()
 
 # # Reproduce the Bug
 # from random import randint
