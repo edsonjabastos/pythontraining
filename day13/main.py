@@ -10,21 +10,21 @@
 
 # my_function()
 
-# Reproduce the Bug
-from random import randint
+# # Reproduce the Bug
+# from random import randint
 
-dice_imgs = ["❶", "❷", "❸", "❹", "❺", "❻"]
-# dice_num = randint(0,6)
-dice_num = randint(0, len(dice_imgs) - 1)
-print(dice_num, "dice")
-print(dice_imgs[dice_num], "imgs")
+# dice_imgs = ["❶", "❷", "❸", "❹", "❺", "❻"]
+# # dice_num = randint(0,6)
+# dice_num = randint(0, len(dice_imgs) - 1)
+# print(dice_num, "dice")
+# print(dice_imgs[dice_num], "imgs")
 
-# # Play Computer
-# year = int(input("What's your year of birth?"))
-# if year > 1980 and year < 1994:
-#   print("You are a millenial.")
-# elif year > 1994:
-#   print("You are a Gen Z.")
+# Play Computer
+year = int(input("What's your year of birth?"))
+if year >= 1980 and year <= 1994:
+  print("You are a millenial.")
+elif year > 1994:
+  print("You are a Gen Z.")
 
 # # Fix the Errors
 # age = input("How old are you?")
