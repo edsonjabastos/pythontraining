@@ -1,0 +1,1 @@
+another_package_variable = 'oi'
