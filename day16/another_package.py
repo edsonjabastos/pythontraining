@@ -1,1 +1,1 @@
-another_package_variable = 'oi'
+another_package_variable = 'coleee mundo'
