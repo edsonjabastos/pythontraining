@@ -9,9 +9,15 @@ question_bank = []
 #     question_bank.append(Question(question_data[i]['text'], question_data[i]['answer']))
 
 for question in question_data:
-    question_text = question['text']
-    question_answer = question['answer']
-    new_question = Question(question_text, question_answer)
+    question_text = question['question']
+    question_answer = question['correct_answer']
+    question_category = question['category']
+    question_type = question['type']
+    question_difficulty = question['difficulty']
+    question_incorrect_answers = question['incorrect_answers']
+
+    new_question = Question(question_text, question_answer, question_category, question_type, question_difficulty,
+                            question_incorrect_answers)
     question_bank.append(new_question)
 
 print(question_bank)
