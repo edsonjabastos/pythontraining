@@ -18,6 +18,10 @@ class QuizBrain:
         self.question_number += 1
         u_answer = input(f"Q.{self.question_number}: {current_question.text}. (True/False)?: ")
         self.check_answer(u_answer, current_question.answer)
+        print(f"{current_question.category}")
+        print(f"{current_question.type}")
+        print(f"{current_question.difficulty}")
+        print(f"{current_question.incorrect_answers}")
         return u_answer
 
     def check_answer(self, user_answer, correct_answer):
