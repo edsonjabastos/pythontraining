@@ -61,8 +61,8 @@ michael_the_big.shape("turtle")
 #         michael_the_big.pencolor(choice(colors))
 #         michael_the_big.left(180)
 #         michael_the_big.forward(10)
-colors = ["red", "green", "blue", "orange", "purple", "brown", "yellow"]
-t.colormode(255)
+# colors = ["red", "green", "blue", "orange", "purple", "brown", "yellow"]
+# t.colormode(255)
 
 
 def random_color():
@@ -72,22 +72,35 @@ def random_color():
     return (r, g, b)
     # return f"rgb({r},{g},{b})"
 
+screen = t.Screen()
+screen.bgcolor("black")
 
-colorRandomized = random_color()
-print(colorRandomized)
+# colorRandomized = random_color()
+# print(colorRandomized)
 
-directions = [0, 90, 180, 270]
-michael_the_big.pensize(15)
+# directions = [0, 90, 180, 270]
+# michael_the_big.pensize(15)
 michael_the_big.speed("fastest")
 
-for _ in range(200):
-    michael_the_big.color(random_color())
-    michael_the_big.forward(30)
-    michael_the_big.setheading(choice(directions))
+# for _ in range(200):
+#     michael_the_big.color(random_color())
+#     michael_the_big.forward(30)
+#     michael_the_big.setheading(choice(directions))
 
-screen = t.Screen()
+for i in range(6):
+   
+      # Choose your color combination
+    for color in ('red', 'magenta', 'blue',
+                  'cyan', 'green', 'white',
+                  'yellow'):
+        michael_the_big.color(color)
+         
+        # Draw a circle of chosen size, 100 here
+        michael_the_big.circle(100)
+         
+        # Move 10 pixels left to draw another circle
+        michael_the_big.left(10)
+
 screen.exitonclick()
-
-
 # import heroes
 # print(heroes.gen())
