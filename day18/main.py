@@ -1,8 +1,10 @@
 from random import randint, choice
-from turtle import Turtle, Screen
+
+# from turtle import Turtle, Screen
+import turtle as t
 
 
-michael_the_big = Turtle()
+michael_the_big = t.Turtle()
 michael_the_big.shape("turtle")
 
 # michael_the_big.circle(100, 100, 100)
@@ -24,7 +26,6 @@ michael_the_big.shape("turtle")
 #     michael_the_big.pendown()
 
 
-colors = ["red", "green", "blue", "orange", "purple", "brown", "yellow"]
 # for i in range(3, 9):
 #     # print(i)
 #     michael_the_big.pencolor(colors[i-3])
@@ -60,9 +61,32 @@ colors = ["red", "green", "blue", "orange", "purple", "brown", "yellow"]
 #         michael_the_big.pencolor(choice(colors))
 #         michael_the_big.left(180)
 #         michael_the_big.forward(10)
+colors = ["red", "green", "blue", "orange", "purple", "brown", "yellow"]
+t.colormode(255)
 
-# screen = Screen()
-# screen.exitonclick()
+
+def random_color():
+    r = randint(0, 255)
+    g = randint(0, 255)
+    b = randint(0, 255)
+    return (r, g, b)
+    # return f"rgb({r},{g},{b})"
+
+
+colorRandomized = random_color()
+print(colorRandomized)
+
+directions = [0, 90, 180, 270]
+michael_the_big.pensize(15)
+michael_the_big.speed("fastest")
+
+for _ in range(200):
+    michael_the_big.color(random_color())
+    michael_the_big.forward(30)
+    michael_the_big.setheading(choice(directions))
+
+screen = t.Screen()
+screen.exitonclick()
 
 
 # import heroes
