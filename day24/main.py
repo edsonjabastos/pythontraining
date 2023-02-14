@@ -8,6 +8,6 @@
 #     contents = file.read()
 #     print(contents)
 
-with open("C:\\Users\\Edson\\Documents\\GitHub\\pythontraining\\day24\\a.txt", mode="a") as file:
+with open("C:\\Users\\Edson\\Documents\\GitHub\\pythontraining\\day24\\new.txt", mode="w") as file:
     file.write("\nEita nóiss.")
     # print(contents)
