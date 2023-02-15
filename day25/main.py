@@ -47,3 +47,9 @@ print(monday.condition)
 
 for temp in data.temp.to_list():
     print(f"{(temp*(9/5)+32)}°F")
+
+
+data_dict = {"students": ["Amy", "James", "Angela"], "scores": [76, 56, 65]}
+df = pandas.DataFrame(data_dict)
+print(df)
+df.to_csv("new_data.csv")
