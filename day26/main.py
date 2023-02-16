@@ -31,3 +31,11 @@
 # #Write your code 👆 above:
 
 # print(squared_numbers)
+
+names = ["Alex", "Beth", "Caroline", "Dave", "Eleanor", "Freddie"]
+import random
+
+students_scores = {student: random.randint(1, 100) for student in names}
+passed_students = {
+    key: value for (key, value) in students_scores.items() if value >= 50
+}
