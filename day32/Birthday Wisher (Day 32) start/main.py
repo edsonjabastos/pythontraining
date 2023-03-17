@@ -4,7 +4,7 @@ import os
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
 my_email = "edsonjabastosx@gmail.com"
-password = "Guglin0#"
+password = "password"
 connection = smtplib.SMTP("smtp.gmail.com")
 connection.starttls()
 connection.login(user=my_email, password=password)
