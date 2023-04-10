@@ -1,6 +1,7 @@
 import math
 from tkinter import *
-
+import os
+os.chdir(os.path.dirname(os.path.abspath(__file__)))
 # import time
 
 # ---------------------------- CONSTANTS ------------------------------- #
