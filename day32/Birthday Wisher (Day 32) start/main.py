@@ -26,7 +26,6 @@ from random import choice
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
 my_email = "edsonjabastosx@gmail.com"
-<<<<<<< Updated upstream
 password = "password"
 connection = smtplib.SMTP("smtp.gmail.com")
 connection.starttls()
@@ -37,7 +36,6 @@ connection.sendmail(
     msg="Hello!",
 )
 connection.close()
-=======
 password = ""
 with open("quotes.txt", "r") as quotes_file:
     quotes = quotes_file.readlines()
@@ -55,4 +53,3 @@ with smtplib.SMTP("smtp.gmail.com") as connection:
         to_addrs="edsonjabastos@hotmail.com",
         msg=message,
     )
->>>>>>> Stashed changes
